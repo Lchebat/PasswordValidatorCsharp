@@ -1,4 +1,6 @@
-﻿namespace PasswordValidator.Services
+﻿using PasswordValidator.Verifiers;
+
+namespace PasswordValidator.Services
 {
     public class PasswordService
     {
@@ -6,9 +8,10 @@
         {
         }
 
-        public bool PasswordVerifier(string password)
+        public bool VerifyPassword(string password)
         {
-            return false;
+            return password.LengthVerifier();
         }
+
     }
 }

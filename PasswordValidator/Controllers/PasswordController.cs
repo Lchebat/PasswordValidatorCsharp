@@ -19,7 +19,7 @@ namespace PasswordValidator.Controllers
         [HttpPost]
         public IActionResult IsValid([FromBody] PasswordModel model)
         {
-            var result = _service.PasswordVerifier(model.Password);
+            var result = _service.VerifyPassword(model.Password);
             Console.WriteLine(model.Password);
             return Ok(result);
         }
