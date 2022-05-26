@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PasswordValidator.Models;
+using PasswordValidator.Services;
 
 namespace PasswordValidator.Controllers
 {
@@ -7,14 +8,20 @@ namespace PasswordValidator.Controllers
     [Route("[controller]")]
     public class PasswordController : ControllerBase
     {
+        private PasswordService _service;
 
+        public PasswordController(PasswordService service)
+        {
+            _service = service;
+        }
         
 
         [HttpPost]
         public IActionResult IsValid([FromBody] PasswordModel model)
         {
+            var result = _service.PasswordVerifier(model.Password);
             Console.WriteLine(model.Password);
-            return Ok(model.Password);
+            return Ok(result);
         }
     }
 }
