@@ -10,7 +10,7 @@ namespace PasswordValidator.Services
 
         public bool VerifyPassword(string password)
         {
-            return password.LengthVerifier();
+            return false;
         }
 
     }
