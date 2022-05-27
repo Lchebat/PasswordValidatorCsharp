@@ -58,11 +58,21 @@ namespace PasswordValidator.Verifiers
 
         public static bool HasCharRepetitionVerifier(this string password)
         {
+
+            //Maiúscula e minúscula contam?
+
+            // password.ToUpper();
+
             for (int i = 0; i < password.Length; i++)
             {
-                if (password[i] == password[i+1])
+                var value = password[i];
+                for (int j = 0; j < password.Length; j++)
                 {
-                    return true;
+                    if (i != j)
+                    {
+                        if(value == password[j])
+                            return true;
+;                    }
                 }
             }
             return false;
