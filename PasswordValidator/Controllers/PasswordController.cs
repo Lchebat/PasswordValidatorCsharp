@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PasswordValidator.Interfaces;
 using PasswordValidator.Models;
 using PasswordValidator.Services;
 
@@ -8,9 +9,9 @@ namespace PasswordValidator.Controllers
     [Route("[controller]")]
     public class PasswordController : ControllerBase
     {
-        private PasswordService _service;
+        private readonly IPasswordService _service;
 
-        public PasswordController(PasswordService service)
+        public PasswordController(IPasswordService service)
         {
             _service = service;
         }

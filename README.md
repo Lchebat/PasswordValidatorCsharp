@@ -6,3 +6,4 @@ Validador de senhas. (C#, .Net Core 6.0, xUnit, API REST)
 - Foi criado a classe StringVerifier para extender a classe string e assim a classe PasswordService apenas chamará os métodos de extensão criados na classe StringVerifier.
 - Foi adicionada uma classe CharVerifier que extende o objeto char para poder filtrar os caracteres especiais permitidos: !@#$%^&*()-+.
 - Foi implementado duas classes de testes unitários utilizando xUnit. A primeira testando todos os métodos da classe StringVerifier e a segunda testando as senhas sugeridas. 
+- Interface IPasswordService implementada para reduzir o acomplamento entre o controlador PasswordController e a classe PasswordService.

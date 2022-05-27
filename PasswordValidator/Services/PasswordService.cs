@@ -1,8 +1,9 @@
-﻿using PasswordValidator.Verifiers;
+﻿using PasswordValidator.Interfaces;
+using PasswordValidator.Verifiers;
 
 namespace PasswordValidator.Services
 {
-    public class PasswordService
+    public class PasswordService : IPasswordService
     {
         public PasswordService()
         {
