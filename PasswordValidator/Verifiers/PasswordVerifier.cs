@@ -2,6 +2,7 @@
 {
     public static class PasswordVerifier
     {
+
         public static bool LengthVerifier(this string password)
         {
             if (password.Length >= 9) return true;
